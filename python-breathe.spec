@@ -14,7 +14,7 @@ Source0:	https://github.com/michaeljones/breathe/archive/v%{version}/%{name}-%{v
 URL:		https://github.com/michaeljones/breathe
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-Sphinx >= 1.0.7
 Requires:	python-docutils >= 0.5
 BuildArch:	noarch
