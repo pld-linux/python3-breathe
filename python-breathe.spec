@@ -41,6 +41,8 @@ Summary:	Sphinx Doxygen renderer
 Summary(pl.UTF-8):	Renderer Doxygena dla systemu dokumentacji Sphinx
 Group:		Libraries/Python
 Requires:	python3-modules
+Requires:	python3-Sphinx >= 1.0.7
+Requires:	python3-docutils >= 0.5
 
 %description -n python3-breathe
 Breathe is an extension to reStructuredText and Sphinx to be able to
