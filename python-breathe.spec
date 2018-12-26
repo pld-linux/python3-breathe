@@ -7,13 +7,13 @@
 Summary:	Sphinx Doxygen renderer
 Summary(pl.UTF-8):	Renderer Doxygena dla systemu dokumentacji Sphinx
 Name:		python-breathe
-Version:	4.6.0
-Release:	2
+Version:	4.11.1
+Release:	1
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://github.com/michaeljones/breathe/releases
 Source0:	https://github.com/michaeljones/breathe/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	bfbf8ba145f0daa855f6e408c420e1e7
+# Source0-md5:	04a2cca7502382518a08e07c0c78ac94
 URL:		https://github.com/michaeljones/breathe
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
