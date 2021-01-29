@@ -1,5 +1,4 @@
 # NOTE: this package is closely related to Sphinx version, so keep it in sync with sphinx-pdg.spec
-# (4.13.0-4.14.x expect Sphinx 2, 4.15+ expect Sphinx 3)
 #
 # Conditional build:
 %bcond_without	tests	# unit tests
@@ -7,18 +6,19 @@
 Summary:	Sphinx Doxygen renderer
 Summary(pl.UTF-8):	Renderer Doxygena dla systemu dokumentacji Sphinx
 Name:		python3-breathe
-Version:	4.14.2
+Version:	4.26.1
 Release:	1
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://github.com/michaeljones/breathe/releases
 Source0:	https://github.com/michaeljones/breathe/archive/v%{version}/breathe-%{version}.tar.gz
-# Source0-md5:	6a97f52f443f5e30e2ecf7afa7f7132d
+# Source0-md5:	1e10c4789bca927dfc462a9bba841df7
 URL:		https://github.com/michaeljones/breathe
 BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 %if %{with tests}
-BuildRequires:	python3-Sphinx >= 2.0
+BuildRequires:	python3-Sphinx >= 3.0
+BuildRequires:	python3-Sphinx < 3.5
 BuildRequires:	python3-docutils >= 0.12
 BuildRequires:	python3-pytest
 BuildRequires:	python3-six >= 1.9
@@ -26,7 +26,6 @@ BuildRequires:	python3-six >= 1.9
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python3-modules >= 1:3.5
-Conflicts:	python3-Sphinx >= 3.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,6 +46,7 @@ Sphinx, pozwalające na odczyt i renderowanie wyjścia XML z Doxygena.
 %if %{with tests}
 cd tests
 PYTHONPATH=.. \
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest -v
 cd ..
 %endif
